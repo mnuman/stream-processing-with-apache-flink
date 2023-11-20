@@ -18,6 +18,7 @@ services:
     image: docker.redpanda.com/redpandadata/redpanda:v23.1.7
     container_name: redpanda
     volumes:
+      # sudo chown -R 101:101 ./logs # set correct permissions to prevent error 13
       - ./logs/redpanda:/var/lib/redpanda/data
     ports:
       - "18081:18081"
